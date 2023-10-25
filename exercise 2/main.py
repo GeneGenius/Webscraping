@@ -8,7 +8,7 @@ def find_jobs():
     jobs = soup.find_all('div', class_= 'mx-5 md:mx-0 flex flex-wrap col-span-1 mb-5 bg-white rounded-lg border border-gray-300 hover:border-gray-400 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-gray-500')
     
     for index, job in enumerate(jobs):
-        job_published_date = job.find('p', class_ = 'ml-auto text-sm font-normal text-gray-700 text-loading-animate').text.replace('','')
+        job_published_date = job.find_all('p', class_ = 'ml-auto text-sm font-normal text-gray-700 text-loading-animate').text.replace('','')
         company_name = job.find('p', class_ = 'text-sm text-link-500').text.replace('', '')
         job_function = job.find('p', class_ = 'text-sm text-gray-500 text-loading-animate inline-block').text.replace('','')
         location = job.find('span', class_='mb-3 px-3 py-1 rounded bg-brand-secondary-100 mr-2 text-loading-hide').text.replace('','')
